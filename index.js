@@ -99,7 +99,7 @@ export default class ModalSelector extends React.Component {
             this.props.onChange(item);
         }
         this.setState({selected: item.label, changedItem: item });
-        this.close();
+        this.props.onClose();
     }
 
     close = () => {
