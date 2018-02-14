@@ -124,9 +124,12 @@ export default class ModalSelector extends React.Component {
     }
 
     renderOption = (option, isLastItem) => {
+      if (!option.style) {
+        option.style = {};
+      }
         return (
             <TouchableOpacity key={option.key} onPress={() => this.onChange(option)} accessible={this.props.accessible} accessibilityLabel={option.accessibilityLabel || undefined}>
-                <View style={[styles.optionStyle, this.props.optionStyle, isLastItem &&
+                <View style={[styles.optionStyle, this.props.optionStyle, option.style, isLastItem &&
                 {borderBottomWidth: 0}]}>
                     <Text style={[styles.optionTextStyle,this.props.optionTextStyle]}>{option.label}</Text>
                 </View>
