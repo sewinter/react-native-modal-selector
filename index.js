@@ -189,7 +189,7 @@ export default class ModalSelector extends React.Component {
                 transparent={true}
                 ref={element => this.model = element}
                 supportedOrientations={this.props.supportedOrientations}
-                visible={this.state.modalVisible}
+                visible={true}
                 onRequestClose={this.close}
                 animationType={this.props.animationType}
                 onDismiss={() => this.state.changedItem && this.props.onChange(this.state.changedItem)}
