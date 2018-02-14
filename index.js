@@ -94,10 +94,7 @@ export default class ModalSelector extends React.Component {
     }
 
     onChange = (item) => {
-        if (Platform.OS === 'android' || !Modal.propTypes.onDismiss) {
-            // RN >= 0.50 on iOS comes with the onDismiss prop for Modal which solves RN issue #10471
-            this.props.onChange(item);
-        }
+        this.props.onChange(item);
         this.setState({selected: item.label, changedItem: item });
         this.props.onClose();
     }
@@ -192,7 +189,6 @@ export default class ModalSelector extends React.Component {
                 visible={true}
                 onRequestClose={this.props.onClose}
                 animationType={this.props.animationType}
-                onDismiss={() => this.state.changedItem && this.props.onChange(this.state.changedItem)}
             >
                 {this.renderOptionList()}
             </Modal>
