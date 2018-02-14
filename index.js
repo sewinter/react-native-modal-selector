@@ -160,7 +160,7 @@ export default class ModalSelector extends React.Component {
                         </ScrollView>
                     </View>
                     <View style={[styles.cancelContainer, this.props.cancelContainerStyle]}>
-                        <TouchableOpacity onPress={this.close} accessible={this.props.accessible} accessibilityLabel={this.props.cancelButtonAccessibilityLabel}>
+                        <TouchableOpacity onPress={this.props.onClose} accessible={this.props.accessible} accessibilityLabel={this.props.cancelButtonAccessibilityLabel}>
                             <View style={[styles.cancelStyle, this.props.cancelStyle]}>
                                 <Text style={[styles.cancelTextStyle,this.props.cancelTextStyle]}>{this.props.cancelText}</Text>
                             </View>
@@ -190,7 +190,7 @@ export default class ModalSelector extends React.Component {
                 ref={element => this.model = element}
                 supportedOrientations={this.props.supportedOrientations}
                 visible={true}
-                onRequestClose={this.close}
+                onRequestClose={this.props.onClose}
                 animationType={this.props.animationType}
                 onDismiss={() => this.state.changedItem && this.props.onChange(this.state.changedItem)}
             >
