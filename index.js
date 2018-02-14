@@ -149,7 +149,7 @@ export default class ModalSelector extends React.Component {
 
         return (
             <TouchableWithoutFeedback key={'modalSelector' + (componentIndex++)} onPress={() => {
-                closeOverlay && this.close();
+                closeOverlay && this.props.onClose();
             }}>
                 <View style={[styles.overlayStyle, this.props.overlayStyle]}>
                     <View style={[styles.optionContainer, this.props.optionContainerStyle]}>
