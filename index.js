@@ -80,7 +80,7 @@ export default class ModalSelector extends React.Component {
         super(props);
 
         this.state = {
-            modalVisible:  false,
+            modalVisible:  true,
             selected:      props.initValue,
             cancelText:    props.cancelText,
             changedItem:   undefined,
@@ -129,9 +129,9 @@ export default class ModalSelector extends React.Component {
       }
         return (
             <TouchableOpacity key={option.key} onPress={() => this.onChange(option)} accessible={this.props.accessible} accessibilityLabel={option.accessibilityLabel || undefined}>
-                <View style={[styles.optionStyle, this.props.optionStyle, option.style, isLastItem &&
+                <View style={[styles.optionStyle, this.props.optionStyle, isLastItem &&
                 {borderBottomWidth: 0}]}>
-                    <Text style={[styles.optionTextStyle,this.props.optionTextStyle]}>{option.label}</Text>
+                    <Text style={[styles.optionTextStyle,this.props.optionTextStyle, option.style]}>{option.label}</Text>
                 </View>
             </TouchableOpacity>);
     }
